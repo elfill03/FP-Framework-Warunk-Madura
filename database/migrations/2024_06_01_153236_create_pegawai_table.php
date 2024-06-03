@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('pegawai', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('data_pegawai');
+            $table->string('nama_pegawai', 50);
+            $table->string('username', 50)->unique();
+            $table->string('password', 50);
+            $table->date('tanggal_lahir');
+            $table->string('tempat_lahir', 50);
+            $table->string('jenis_kelamin', 10);
+            $table->integer('no_telp');
+            $table->string('foto_pegawai', 150);
             $table->foreignId('admin_id')->constrained('admin');
             $table->timestamps();
         });
