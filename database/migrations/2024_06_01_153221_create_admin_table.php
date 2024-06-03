@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('alamat_toko');
-            $table->foreignId('super_admin_id')->constrained('super_admin');
+            $table->string('nama_pemilik', 50);
+            $table->string('username', 50)->unique();
+            $table->string('password', 50);
+            $table->string('nama_toko', 50);
+            $table->string('alamat_toko', 50);
+            $table->integer('no_telp');
             $table->timestamps();
         });
     }
