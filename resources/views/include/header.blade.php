@@ -26,7 +26,7 @@
             aria-expanded="false"
           >
             <img
-              src="assets/images/avatars/avatar-2.png"
+              src="{{ asset('images/avatars/avatar-2.png') }}"
               class="user-img"
               alt="user avatar"
             />

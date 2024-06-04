@@ -1,7 +1,5 @@
 <script src="{{ asset("js/jquery.min.js") }}"></script>
 
-<script src="{{ asset("js/jquery.min.js") }}"></script>
-
 <script src="{{ asset("plugins/simplebar/js/simplebar.min.js") }}"></script>
 
 <script src="{{ asset("plugins/metismenu/js/metisMenu.min.js") }}"></script>
