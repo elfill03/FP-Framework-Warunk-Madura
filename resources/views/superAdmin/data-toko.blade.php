@@ -24,7 +24,10 @@
         </div>
     </div>
     <!--end breadcrumb-->
-    <h6 class="mb-0 text-uppercase">Data Cabang Toko</h6>
+    <div class="d-flex">
+        <h6 class="mb-0 text-uppercase">Data Cabang Toko</h6>
+        <a href="/super/add-toko" class="btn btn-primary ms-auto">Tambah Cabang</a>
+    </div>
     <hr/>
     <div class="card">
         <div class="card-body">
@@ -44,8 +47,8 @@
                             <td>ahmad@mail.com</td>
                             <td>Jln. Legenda No 31, Konoha</td>
                             <td>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a href="/super/edit-toko" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -53,8 +56,8 @@
                             <td>ridho@mail.com</td>
                             <td>Jln. Legenda No 31, Konoha</td>
                             <td>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a href="/super/edit-toko" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -62,8 +65,8 @@
                             <td>fahri@mail.com</td>
                             <td>Jln. Legenda No 31, Konoha</td>
                             <td>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a href="/super/edit-toko" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -71,8 +74,8 @@
                             <td>doni@mail.com</td>
                             <td>Jln. Legenda No 31, Konoha</td>
                             <td>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a href="/super/edit-toko" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -80,8 +83,8 @@
                             <td>maulana@mail.com</td>
                             <td>Jln. Legenda No 31, Konoha</td>
                             <td>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a href="/super/edit-toko" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -89,8 +92,8 @@
                             <td>Akbar@mail.com</td>
                             <td>Jln. Legenda No 31, Konoha</td>
                             <td>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a href="/super/edit-toko" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                     </tbody>
