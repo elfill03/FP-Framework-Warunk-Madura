@@ -24,7 +24,10 @@
         </div>
     </div>
     <!--end breadcrumb-->
-    <h6 class="mb-0 text-uppercase">Data Barang Keluar</h6>
+    <div class="d-flex">
+        <h6 class="mb-0 text-uppercase">Data Barang Keluar</h6>
+        <a href="/kasir/add-barang-keluar" class="btn btn-primary ms-auto">Tambah Barang</a>
+    </div>
     <hr/>
     <div class="card">
         <div class="card-body">
@@ -34,7 +37,6 @@
                         <tr>
                             <th>Tanggal</th>
                             <th>Nama Barang</th>
-                            <th>Jenis Barang</th>
                             <th>Jumlah Barang</th>
                             <th>Harga Barang</th>
                             <th>Aksi</th>
@@ -44,541 +46,496 @@
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Teh Pucuk</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Le Minerale</td>
-                            <td>Minuman</td>
                             <td>24</td>
                             <td>Rp. 3.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Minyal Bimoli</td>
-                            <td>Bahan Masak</td>
                             <td>20</td>
                             <td>Rp. 15.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Pepsodent</td>
-                            <td>Alat Mandi</td>
                             <td>10</td>
                             <td>Rp. 10.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>27-05-2024</td>
                             <td>Beras</td>
-                            <td>Sembako</td>
                             <td>30</td>
                             <td>Rp. 12.000</td>
                             <td>
-                                <button class="btn btn-primary"><i class="bx bx-show text-white"></i></button>
-                                <button class="btn btn-warning"><i class="bx bx-edit text-white"></i></button>
-                                <button class="btn btn-danger"><i class="bx bx-trash text-white"></i></button>
+                                <a class="btn btn-primary"><i class="bx bx-show text-white"></i></a>
+                                <a href="/kasir/edit-barang-keluar" class="btn btn-warning"><i class="bx bx-edit text-white"></i></a>
+                                <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
                             </td>
                         </tr>
                     </tbody>

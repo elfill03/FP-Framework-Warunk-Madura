@@ -20,6 +20,14 @@ Route::get('/super/data-toko', function () {
     return view('superAdmin.data-toko');
 })->name('datatoko');
 
+Route::get('/super/add-toko', function () {
+    return view('superAdmin.add-toko');
+})->name('adddatatoko');
+
+Route::get('/super/edit-toko', function () {
+    return view('superAdmin.edit-toko');
+})->name('updatedatatoko');
+
 
 
 // ADMIN
@@ -40,6 +48,14 @@ Route::get('/admin/laporan-pengeluaran', function () {
     return view('admin.laporan-pengeluaran');
 })->name('laporanpengeluaran');
 
+Route::get('/admin/add-barang-masuk', function () {
+    return view('admin.add-barang-masuk');
+})->name('addbarangmasuk');
+
+Route::get('/admin/edit-barang-masuk', function () {
+    return view('admin.edit-barang-masuk');
+})->name('updatebarangmasuk');
+
 
 
 // KASIR
@@ -56,6 +72,14 @@ Route::get('/kasir/laporan-pengeluaran', function () {
     return view('kasir.laporan-pengeluaran');
 })->name('laporanpengeluaran');
 
+Route::get('/kasir/add-barang-keluar', function () {
+    return view('kasir.add-barang-keluar');
+})->name('addbarangkeluar');
+
+Route::get('/kasir/edit-barang-keluar', function () {
+    return view('kasir.edit-barang-keluar');
+})->name('updatebarangkeluar');
+
 
 
 // AUTHENTICATION
@@ -71,3 +95,7 @@ Route::get('/daftar', function () {
 
 
 
+
+Route::get('/profile', function () {
+    return view('profile.profile');
+})->name('profile');
