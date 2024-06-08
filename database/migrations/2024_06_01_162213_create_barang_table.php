@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('nama_barang', 50);
             $table->integer('jumlah_barang');
             $table->integer('harga_barang');
-            $table->foreignId('admin_id')->constrained('admin');
-            $table->foreignId('pegawai_id')->constrained('pegawai');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('satuan_id')->constrained('satuan_barang');
             $table->foreignId('barang_masuk_id')->constrained('barang_masuk');
             $table->foreignId('barang_keluar_id')->constrained('barang_keluar');
