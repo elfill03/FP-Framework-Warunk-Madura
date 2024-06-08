@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 
+use Illuminate\Support\Facades\Auth;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -84,9 +85,10 @@ Route::get('/kasir/edit-barang-keluar', function () {
 
 // AUTHENTICATION
 
-Route::get('/', function () {
-    return view('auth.login');
-})->name('login');
+// Route::get('/', function () {
+//     return view('auth.login');
+// })->name('login');
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate']);
 
 Route::get('/daftar', function () {
     return view('auth.daftar');
@@ -99,3 +101,7 @@ Route::get('/daftar', function () {
 Route::get('/profile', function () {
     return view('profile.profile');
 })->name('profile');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
