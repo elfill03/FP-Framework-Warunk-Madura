@@ -31,7 +31,7 @@
         </a>
       </li>
       <li>
-        <a href="widgets.html">
+        <a href="/super/data-admin">
           <div class="parent-icon"><i class="bx bx-user"></i></div>
           <div class="menu-title">Data Admin</div>
         </a>

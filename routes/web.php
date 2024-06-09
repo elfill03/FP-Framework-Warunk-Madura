@@ -28,6 +28,18 @@ Route::get('/super/edit-toko', function () {
     return view('superAdmin.edit-toko');
 })->name('updatedatatoko');
 
+Route::get('/super/data-admin', function () {
+    return view('superAdmin.data-admin');
+})->name('dataadmin');
+
+Route::get('/super/add-admin', function () {
+    return view('superAdmin.add-admin');
+})->name('adddataadmin');
+
+Route::get('/super/edit-admin', function () {
+    return view('superAdmin.edit-admin');
+})->name('updatedataadmin');
+
 
 
 // ADMIN

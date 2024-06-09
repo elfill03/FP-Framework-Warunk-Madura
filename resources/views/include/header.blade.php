@@ -54,3 +54,7 @@
     </div>
   </header>
   <!--end header -->
+
+  @push('script')
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+@endpush
