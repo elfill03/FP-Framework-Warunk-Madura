@@ -1,6 +1,28 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <title>Document</title>
+</head>
+
+<body>
     <div class="wrapper">
         <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
             <div class="container-fluid">
@@ -25,7 +47,8 @@
                                         <form class="row g-3" method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <div class="col-12">
-                                                <label for="email" class="form-label">{{ __('Email Address') }}</label>
+                                                <label for="email"
+                                                    class="form-label">{{ __('Email Address') }}</label>
                                                 <div class="input-group">
                                                     <input id="email" type="email" placeholder="Enter Password"
                                                         class="form-control border-end-0 @error('email') is-invalid @enderror"
@@ -79,4 +102,6 @@
         </div>
     </div>
     </div>
-@endsection
+</body>
+
+</html>

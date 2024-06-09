@@ -16,17 +16,18 @@ class CheckRole
      * @param  string  $role
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, $role)
+    public function handle($request, Closure $next, $role)
     {
+
         if (!Auth::check()) {
             return redirect('/login');
         }
 
         $user = Auth::user();
-        if ($user->role == $role) {
-            return $next($request);
+        if ($user->role != $role) {
+            return abort(403, 'Unauthorized action.');
         }
 
-        return redirect('/login'); // Atau halaman lain sesuai kebutuhan
+        return $next($request);
     }
 }
