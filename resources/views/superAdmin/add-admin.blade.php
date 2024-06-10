@@ -25,23 +25,95 @@
                 <h6 class="mb-0 text-uppercase">Tambah Data Admin</h6>
                 <hr />
                 <div class="card">
-                    <div class="card-body">
-                        <label for="basic-url" class="form-label">Nama Admin</label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    <form action="{{ route('adminController.store') }}" method="POST">
+                        @csrf
+                        <div class="card-body">
+                            <div class=" mb-3">
+                                <label for="firstName" class="form-label">Nama Admin</label>
+                                <input class="form-control @error('nama') is-invalid @enderror" type="text"
+                                    name="nama" id="nama" value="{{ old('nama') }}" placeholder="Nama Admin">
+                                @error('nama')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class=" mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input class="form-control @error('email') is-invalid @enderror" type="text"
+                                    name="email" id="email" value="{{ old('nama') }}" placeholder="Email Admin">
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">{{ __('Password') }}</label>
+                                <input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password" required
+                                    autocomplete="new-password" name="password" id="password" value="{{ old('password') }}"
+                                    placeholder="Password">
+                                @error('password')
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="row gy-5">
+                                <div class="col-md-6 mb-3">
+                                    <label for="alamat" class="form-label">alamat</label>
+                                    <input class="form-control @error('alamat') is-invalid @enderror" type="text"
+                                        name="alamat" id="alamat" value="{{ old('alamat') }}" placeholder="alamat">
+                                    @error('alamat')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="no_telp" class="form-label">no_telp</label>
+                                    <input class="form-control @error('no_telp') is-invalid @enderror" type="text"
+                                        name="no_telp" id="no_telp" value="{{ old('no_telp') }}" placeholder="no_telp ">
+                                    @error('no_telp')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row gy-5">
+                                <div class="col-md-6 mb-3">
+                                    <label for="no_telp" class="form-label">Tanggal</label>
+                                    <input type="date" class="form-control" id="tanggal_Lahir" name="tanggal_Lahir"
+                                        value="{{ old('tanggal_Lahir') }}">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="jenis_kelamin" class="form-label">Jenis Kelamin:</label>
+                                    <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+                                        <option value="L">Laki-laki</option>
+                                        <option value="P">Perempuan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {{-- <label for="basic-url" class="form-label">Nama Admin</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                            </div> --}}
+                            {{-- <label for="basic-url" class="form-label">Email Admin</label>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                            </div>
+                            <label for="basic-url" class="form-label">Alamat Admin</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                            </div> --}}
+                            <div class="d-flex justify-content-center mt-4">
+                                <button type="submit" class="btn btn-primary">Tambah Admin</button>
+                            </div>
                         </div>
-                        <label for="basic-url" class="form-label">Email Admin</label>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                        </div>
-                        <label for="basic-url" class="form-label">Alamat Admin</label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                        </div>
-                        <div class="d-flex justify-content-center mt-4">
-                            <button class="btn btn-primary">Tambah Admin</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
