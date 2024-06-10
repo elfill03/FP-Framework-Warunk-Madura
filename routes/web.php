@@ -5,89 +5,147 @@ use App\Http\Controllers\BarangController;
 
 use Illuminate\Support\Facades\Auth;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return redirect('/login');
+});
 
 
+// Super admin
+Route::middleware(['auth'])->group(function () {
+    Route::get('/super/superadmin-dashboard', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.sup-admin-dashboard');
+    })->name('dashboard');
 
-// SUPER ADMIN
+    Route::get('/super/data-toko', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.data-toko');
+    })->name('datatoko');
 
-Route::get('/super/superadmin-dashboard', function () {
-    return view('superAdmin.sup-admin-dashboard');
-})->name('dashboard');
+    Route::get('/super/data-admin', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.data-admin');
+    })->name('dataadmin');
 
-Route::get('/super/data-toko', function () {
-    return view('superAdmin.data-toko');
-})->name('datatoko');
+    Route::get('/super/add-admin', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.add-admin');
+    })->name('adddataadmin');
 
-Route::get('/super/add-toko', function () {
-    return view('superAdmin.add-toko');
-})->name('adddatatoko');
+    Route::get('/super/add-toko', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.add-toko');
+    })->name('adddatatoko');
 
-Route::get('/super/edit-toko', function () {
-    return view('superAdmin.edit-toko');
-})->name('updatedatatoko');
+    Route::get('/super/edit-toko', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.edit-toko');
+    })->name('updatedatatoko');
 
-
+    Route::get('/super/edit-admin', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.edit-admin');
+    })->name('updatedataadmin');
+});
 
 // ADMIN
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/admin-dashboard', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.admin-dashboard');
+    })->name('admindashboard');
 
-Route::get('/admin/admin-dashboard', function () {
-    return view('admin.admin-dashboard');
-})->name('dashboard');
+    Route::get('/admin/barang-masuk', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.barang-masuk');
+    })->name('barangmasuk');
 
-Route::get('/admin/barang-masuk', function () {
-    return view('admin.barang-masuk');
-})->name('barangmasuk');
+    Route::get('/admin/laporan-pemasukan', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.laporan-pemasukan');
+    })->name('laporanpemasukan');
 
-Route::get('/admin/laporan-pemasukan', function () {
-    return view('admin.laporan-pemasukan');
-})->name('laporanpemasukan');
+    Route::get('/admin/laporan-pengeluaran', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.laporan-pengeluaran');
+    })->name('laporanpengeluaran');
 
-Route::get('/admin/laporan-pengeluaran', function () {
-    return view('admin.laporan-pengeluaran');
-})->name('laporanpengeluaran');
+    Route::get('/admin/add-barang-masuk', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.add-barang-masuk');
+    })->name('addbarangmasuk');
 
-Route::get('/admin/add-barang-masuk', function () {
-    return view('admin.add-barang-masuk');
-})->name('addbarangmasuk');
-
-Route::get('/admin/edit-barang-masuk', function () {
-    return view('admin.edit-barang-masuk');
-})->name('updatebarangmasuk');
-
-
+    Route::get('/admin/edit-barang-masuk', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.edit-barang-masuk');
+    })->name('updatebarangmasuk');
+});
 
 // KASIR
+Route::middleware(['auth'])->group(function () {
+    Route::get('/kasir/kasir-dashboard', function () {
+        if (Auth::user()->role != 'kasir') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('kasir.kasir-dashboard');
+    })->name('kasirdashboard');
 
-Route::get('/kasir/kasir-dashboard', function () {
-    return view('kasir.kasir-dashboard');
-})->name('kasirdashboard');
+    Route::get('/kasir/barang-keluar', function () {
+        if (Auth::user()->role != 'kasir') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('kasir.barang-keluar');
+    })->name('barangkeluar');
 
-Route::get('/kasir/barang-keluar', function () {
-    return view('kasir.barang-keluar');
-})->name('barangkeluar');
+    Route::get('/kasir/laporan-pengeluaran', function () {
+        if (Auth::user()->role != 'kasir') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('kasir.laporan-pengeluaran');
+    })->name('laporanpengeluarankasir');
 
-Route::get('/kasir/laporan-pengeluaran', function () {
-    return view('kasir.laporan-pengeluaran');
-})->name('laporanpengeluaran');
+    Route::get('/kasir/add-barang-keluar', function () {
+        if (Auth::user()->role != 'kasir') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('kasir.add-barang-keluar');
+    })->name('addbarangkeluar');
 
-Route::get('/kasir/add-barang-keluar', function () {
-    return view('kasir.add-barang-keluar');
-})->name('addbarangkeluar');
-
-Route::get('/kasir/edit-barang-keluar', function () {
-    return view('kasir.edit-barang-keluar');
-})->name('updatebarangkeluar');
-
-
+    Route::get('/kasir/edit-barang-keluar', function () {
+        if (Auth::user()->role != 'kasir') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('kasir.edit-barang-keluar');
+    })->name('updatebarangkeluar');
+});
 
 // AUTHENTICATION
-
-// Route::get('/', function () {
-//     return view('auth.login');
-// })->name('login');
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate']);
 
 Route::get('/daftar', function () {
@@ -95,9 +153,7 @@ Route::get('/daftar', function () {
 })->name('daftar');
 
 
-
-
-
+// PROFILE
 Route::get('/profile', function () {
     return view('profile.profile');
 })->name('profile');
