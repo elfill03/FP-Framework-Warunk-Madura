@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataAdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 
@@ -161,3 +162,5 @@ Route::get('/profile', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('adminController', DataAdminController::class);
