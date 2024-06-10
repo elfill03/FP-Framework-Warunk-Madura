@@ -26,6 +26,20 @@ Route::middleware(['auth'])->group(function () {
         return view('superAdmin.data-toko');
     })->name('datatoko');
 
+    Route::get('/super/data-admin', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.data-admin');
+    })->name('dataadmin');
+
+    Route::get('/super/add-admin', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.add-admin');
+    })->name('adddataadmin');
+
     Route::get('/super/add-toko', function () {
         if (Auth::user()->role != 'super_admin') {
             abort(403, 'Unauthorized action.');
@@ -39,6 +53,13 @@ Route::middleware(['auth'])->group(function () {
         }
         return view('superAdmin.edit-toko');
     })->name('updatedatatoko');
+
+    Route::get('/super/edit-admin', function () {
+        if (Auth::user()->role != 'super_admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('superAdmin.edit-admin');
+    })->name('updatedataadmin');
 });
 
 // ADMIN
@@ -131,6 +152,8 @@ Route::get('/daftar', function () {
     return view('auth.daftar');
 })->name('daftar');
 
+
+// PROFILE
 Route::get('/profile', function () {
     return view('profile.profile');
 })->name('profile');
