@@ -32,77 +32,20 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <table id="adminTable" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Nama Admin</th>
-                                <th>Email Admin</th>
-                                <th>Alamat Admin</th>
-                                <th>Aksi</th>
+                                <th>ID</th>
+                                <th>No.</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
+                                <th>No. Telp</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ahmad</td>
-                                <td>ahmad@mail.com</td>
-                                <td>Jln. Legenda No 31, Konoha</td>
-                                <td>
-                                    <a href="/super/edit-admin" class="btn btn-warning"><i
-                                            class="bx bx-edit text-white"></i></a>
-                                    <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Rihho</td>
-                                <td>ridho@mail.com</td>
-                                <td>Jln. Legenda No 31, Konoha</td>
-                                <td>
-                                    <a href="/super/edit-admin" class="btn btn-warning"><i
-                                            class="bx bx-edit text-white"></i></a>
-                                    <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Fahri</td>
-                                <td>fahri@mail.com</td>
-                                <td>Jln. Legenda No 31, Konoha</td>
-                                <td>
-                                    <a href="/super/edit-admin" class="btn btn-warning"><i
-                                            class="bx bx-edit text-white"></i></a>
-                                    <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Doni</td>
-                                <td>doni@mail.com</td>
-                                <td>Jln. Legenda No 31, Konoha</td>
-                                <td>
-                                    <a href="/super/edit-admin" class="btn btn-warning"><i
-                                            class="bx bx-edit text-white"></i></a>
-                                    <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Maulana</td>
-                                <td>maulana@mail.com</td>
-                                <td>Jln. Legenda No 31, Konoha</td>
-                                <td>
-                                    <a href="/super/edit-admin" class="btn btn-warning"><i
-                                            class="bx bx-edit text-white"></i></a>
-                                    <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Akbar</td>
-                                <td>Akbar@mail.com</td>
-                                <td>Jln. Legenda No 31, Konoha</td>
-                                <td>
-                                    <a href="/super/edit-admin" class="btn btn-warning"><i
-                                            class="bx bx-edit text-white"></i></a>
-                                    <a class="btn btn-danger"><i class="bx bx-trash text-white"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -110,11 +53,71 @@
     @endsection
 
     @push('script')
+        <script>
+            $(document).ready(function() {
+                console.log('Document ready');
+
+                $("#adminTable").DataTable({
+                    serverSide: true,
+                    processing: true,
+                    ajax: "{{ route('dataAdmin.getAdmin') }}",
+                    columns: [{
+                            data: "id",
+                            name: "id",
+                            visible: false
+                        },
+                        {
+                            data: "DT_RowIndex",
+                            name: "DT_RowIndex",
+                            orderable: false,
+                            searchable: false
+                        },
+                        {
+                            data: "nama",
+                            name: "nama"
+                        },
+                        {
+                            data: "email",
+                            name: "email"
+                        },
+                        {
+                            data: "tanggal_lahir",
+                            name: "tanggal_lahir"
+                        },
+                        {
+                            data: "jenis_kelamin",
+                            name: "jenis_kelamin"
+                        },
+                        {
+                            data: "alamat",
+                            name: "alamat"
+                        },
+                        {
+                            data: "no_telp",
+                            name: "no_telp"
+                        },
+                        {
+                            data: "actions",
+                            name: "actions",
+                            orderable: false,
+                            searchable: false
+                        }
+                    ],
+                    order: [
+                        [0, "desc"]
+                    ],
+                    lengthMenu: [
+                        [10, 25, 50, 100, -1],
+                        [10, 25, 50, 100, "All"],
+                    ],
+                });
+            });
+        </script>
         <script src="{{ asset('plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
         <script>
             $(document).ready(function() {
-                $('#example').DataTable();
+                $('#adminTable').DataTable();
             });
         </script>
         <script>
