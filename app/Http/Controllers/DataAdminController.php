@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Yajra\DataTables\DataTables;
 
 class DataAdminController extends Controller
 {
@@ -93,5 +94,17 @@ class DataAdminController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function getAdmin(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = User::where('role', 'admin')->get();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('actions', function ($data) {
+                    return view("superAdmin.layout.actions");
+                })
+                ->make(true);
+        }
     }
 }
