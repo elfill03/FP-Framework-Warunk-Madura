@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataAdminController;
+use App\Http\Controllers\DataKasirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 
@@ -93,6 +94,20 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.laporan-pengeluaran');
     })->name('laporanpengeluaran');
 
+    Route::get('/admin/data-kasir', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.data-kasir');
+    })->name('dataKasir');
+
+    Route::get('/admin/add-kasir', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.add-kasir');
+    })->name('addKasir');
+
     Route::get('/admin/add-barang-masuk', function () {
         if (Auth::user()->role != 'admin') {
             abort(403, 'Unauthorized action.');
@@ -131,6 +146,7 @@ Route::middleware(['auth'])->group(function () {
         return view('kasir.laporan-pengeluaran');
     })->name('laporanpengeluarankasir');
 
+
     Route::get('/kasir/add-barang-keluar', function () {
         if (Auth::user()->role != 'kasir') {
             abort(403, 'Unauthorized action.');
@@ -163,5 +179,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Data Admin Controller
 Route::resource('adminController', DataAdminController::class);
 Route::get('/dataAdmin/getAdmin', [DataAdminController::class, 'getAdmin'])->name('dataAdmin.getAdmin');
+
+// Data Kasir Controller
+Route::resource('kasirController', DataKasirController::class);
+Route::get('/dataKasir/getKasir', [DataKasirController::class, 'getKasir'])->name('dataKasir.getKasir');
