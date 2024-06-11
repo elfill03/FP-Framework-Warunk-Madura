@@ -14,20 +14,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'nama' => 'El',
-                'email' => 'Fill',
-                'password' => bcrypt('superadmin'),
-                'tanggal_Lahir' => '1945-08-17',
-                'jenis_kelamin' => 'L',
-                'alamat' => 'Surabaya, Indonesia',
-                'no_telp' => '081232803452',
-                'foto_profile' => 'null',
-                'role' => 'super_admin',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'nama' => 'hugo',
+                'nama' => 'super',
                 'email' => 'super@super',
                 'password' => bcrypt('superadmin'),
                 'tanggal_Lahir' => '1945-08-17',
@@ -40,7 +27,7 @@ class UserSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'nama' => 'rayhan',
+                'nama' => 'admin',
                 'email' => 'admin@admin',
                 'password' => bcrypt('adminadmin'),
                 'tanggal_Lahir' => '1945-08-17',
@@ -53,7 +40,7 @@ class UserSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'nama' => 'rayhan',
+                'nama' => 'kasir',
                 'email' => 'kasir@kasir',
                 'password' => bcrypt('kasirkasir'),
                 'tanggal_Lahir' => '1945-08-17',

@@ -24,16 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
 
         // Redirect to appropriate dashboard based on user role
         $user = Auth::user();
         if ($user->role == 'super_admin') {
-            return view('superAdmin.sup-admin-dashboard');
+            return view('superAdmin.sup-admin-dashboard', ['user' => $user]);
         } elseif ($user->role == "admin") {
-            return view("admin.admin-dashboard");
+            return view("admin.admin-dashboard", ['user' => $user]);
         } elseif ($user->role == 'kasir') {
-            return view('kasir.kasir-dashboard');
+            return view('kasir.kasir-dashboard', ['user' => $user]);
         } else {
             return view('error');
         }

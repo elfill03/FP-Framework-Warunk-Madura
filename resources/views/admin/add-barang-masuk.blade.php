@@ -26,25 +26,37 @@
             <hr/>
             <div class="card">
                 <div class="card-body">
-                    <label for="basic-url" class="form-label">Tanggal</label>
-                    <div class="input-group mb-3">
-                        <input type="date" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </div>
-                    <label for="basic-url" class="form-label">Nama Barang</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </div>
-                    <label for="basic-url" class="form-label">Jumlah Barang</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </div>
-                    <label for="basic-url" class="form-label">Harga Barang</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </div>
-                    <div class="d-flex justify-content-center mt-4">
-                        <button class="btn btn-primary">Tambah Data</button>
-                    </div>
+                    <form action="{{ route('barang.store') }}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="tanggal" class="form-label">Tanggal</label>
+                            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nama_barang" class="form-label">Nama Barang</label>
+                            <input type="text" class="form-control" id="nama_barang" name="nama_barang" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jumlah_barang" class="form-label">Jumlah Barang</label>
+                            <input type="number" class="form-control" id="jumlah_barang" name="jumlah_barang" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="harga_barang" class="form-label">Harga Barang</label>
+                            <input type="number" class="form-control" id="harga_barang" name="harga_barang" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="satuan_id" class="form-label">Satuan Barang</label>
+                            <select class="form-select" id="satuan_id" name="satuan_id" required>
+                                <option value="">Pilih Satuan</option>
+                                @foreach($satuanList as $satuan)
+                                    <option value="{{ $satuan->id }}">{{ $satuan->kode_satuan }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-center mt-4">
+                            <button type="submit" class="btn btn-primary">Tambah Data</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
