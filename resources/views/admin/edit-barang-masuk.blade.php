@@ -26,25 +26,37 @@
             <hr/>
             <div class="card">
                 <div class="card-body">
-                    <label for="basic-url" class="form-label">Tanggal</label>
-                    <div class="input-group mb-3">
-                        <input type="date" class="form-control" id="basic-url" value="27-05-2024" aria-describedby="basic-addon3">
-                    </div>
-                    <label for="basic-url" class="form-label">Nama Barang</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-url" value="Teh Pucuk" aria-describedby="basic-addon3">
-                    </div>
-                    <label for="basic-url" class="form-label">Jumlah Barang</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-url" value="24" aria-describedby="basic-addon3">
-                    </div>
-                    <label for="basic-url" class="form-label">Harga Barang</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-url" value="Rp. 3000" aria-describedby="basic-addon3">
-                    </div>
-                    <div class="d-flex justify-content-center mt-4">
-                        <button class="btn btn-primary">Simpan Perubahan</button>
-                    </div>
+                    <form action="{{ route('barang.update', $barang->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <label for="tanggal" class="form-label">Tanggal</label>
+                        <div class="input-group mb-3">
+                            <input type="date" name="tanggal" class="form-control" id="tanggal" value="{{ $barang->tanggal }}" aria-describedby="basic-addon3">
+                        </div>
+                        <label for="nama_barang" class="form-label">Nama Barang</label>
+                        <div class="input-group mb-3">
+                            <input type="text" name="nama_barang" class="form-control" id="nama_barang" value="{{ $barang->nama_barang }}" aria-describedby="basic-addon3">
+                        </div>
+                        <label for="jumlah_barang" class="form-label">Jumlah Barang</label>
+                        <div class="input-group mb-3">
+                            <input type="text" name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{ $barang->jumlah_barang }}" aria-describedby="basic-addon3">
+                        </div>
+                        <label for="harga_barang" class="form-label">Harga Barang</label>
+                        <div class="input-group mb-3">
+                            <input type="text" name="harga_barang" class="form-control" id="harga_barang" value="{{ $barang->harga_barang }}" aria-describedby="basic-addon3">
+                        </div>
+                        <label for="satuan_id" class="form-label">Satuan Barang</label>
+                        <div class="input-group mb-3">
+                            <select name="satuan_id" id="satuan_id" class="form-control">
+                                @foreach($satuanList as $satuan)
+                                    <option value="{{ $satuan->id }}" {{ $satuan->id == $barang->satuan_id ? 'selected' : '' }}>{{ $satuan->kode_satuan }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-center mt-4">
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -10,6 +10,7 @@ class Kernel extends HttpKernel
         // Middleware lainnya
         'auth' => \App\Http\Middleware\Authenticate::class,
         'role' => \App\Http\Middleware\CheckRole::class,
+        
     ];
     /**
      * The application's global HTTP middleware stack.
