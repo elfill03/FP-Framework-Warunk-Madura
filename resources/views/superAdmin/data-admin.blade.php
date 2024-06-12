@@ -26,7 +26,7 @@
         <!--end breadcrumb-->
         <div class="d-flex">
             <h6 class="mb-0 text-uppercase">Data Admin Toko</h6>
-            <a href="{{ route('adminController.create') }}" class="btn btn-primary ms-auto">Tambah Admin</a>
+            <a href="{{ route('superAdminController.create') }}" class="btn btn-primary ms-auto">Tambah Admin</a>
         </div>
         <hr />
         <div class="card">

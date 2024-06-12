@@ -21,13 +21,13 @@
         </li>
         <li class="menu-label">Cabang Toko</li>
         <li>
-            <a href="/super/data-toko">
+            <a href="{{ route('TokoController.index') }}">
                 <div class="parent-icon"><i class="bx bx-store"></i></div>
                 <div class="menu-title">Lihat Toko</div>
             </a>
         </li>
         <li>
-            <a href="{{ route('adminController.index') }}">
+            <a href="{{ route('superAdminController.index') }}">
                 <div class="parent-icon"><i class="bx bx-user"></i></div>
                 <div class="menu-title">Data Admin</div>
             </a>

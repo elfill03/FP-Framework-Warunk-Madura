@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataKasirController;
+use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 
@@ -180,12 +181,16 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Data Admin Controller
-Route::resource('adminController', DataAdminController::class);
+Route::resource('superAdminController', DataAdminController::class);
 Route::get('/dataAdmin/getAdmin', [DataAdminController::class, 'getAdmin'])->name('dataAdmin.getAdmin');
-Route::get('/admin/{id}/edit', [DataAdminController::class, 'edit'])->name('dataAdmin.edit');
+Route::get('/superAdmin/{id}/edit', [DataAdminController::class, 'edit'])->name('dataAdmin.edit');
 
 
 // Data Kasir Controller
 Route::resource('kasirController', DataKasirController::class, );
 Route::get('/dataKasir/getKasir', [DataKasirController::class, 'getKasir'])->name('dataKasir.getKasir');
 Route::get('/admin/{id}/edit', [DataKasirController::class, 'edit'])->name('dataKasir.edit');
+
+
+// Toko Controller
+Route::resource('TokoController', TokoController::class, );

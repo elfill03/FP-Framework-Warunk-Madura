@@ -21,7 +21,8 @@
 
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('adminController.update', ['adminController' => $user->id]) }}" method="POST">
+                <form action="{{ route('superAdminController.update', ['superAdminController' => $user->id]) }}"
+                    method="POST">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">

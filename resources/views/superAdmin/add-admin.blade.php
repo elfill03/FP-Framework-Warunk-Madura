@@ -25,7 +25,7 @@
                 <h6 class="mb-0 text-uppercase">Tambah Data Admin</h6>
                 <hr />
                 <div class="card">
-                    <form action="{{ route('adminController.store') }}" method="POST">
+                    <form action="{{ route('superAdminController.store') }}" method="POST">
                         @csrf
                         <div class="card-body">
                             <div class=" mb-3">

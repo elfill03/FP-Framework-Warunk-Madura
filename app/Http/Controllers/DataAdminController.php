@@ -63,7 +63,7 @@ class DataAdminController extends Controller
             'role' => ("admin"),
         ]);
         $user->save();
-
+        return redirect()->route('superAdminController.index');
         // return redirect()->route('users.index')->with('success', 'User created successfully.');
 
     }
@@ -123,7 +123,7 @@ class DataAdminController extends Controller
         $user->no_telp = $request->input('no_telp');
         $user->save();
 
-        return redirect()->route('adminController.index')->with('success', 'Data Admin updated successfully');
+        return redirect()->route('superAdminController.index')->with('success', 'Data Admin updated successfully');
     }
 
     public function destroy(string $id)
@@ -131,7 +131,7 @@ class DataAdminController extends Controller
         $user = User::find($id);
         // Periksa apakah user ada sebelum mencoba menghapus
         if (!$user) {
-            return redirect()->route('adminController.index')->with('error', 'User not found.');
+            return redirect()->route('superAdminController.index')->with('error', 'User not found.');
         }
         // Hapus file yang terkait jika ada
         if ($user->encrypted_filename) {
@@ -141,7 +141,7 @@ class DataAdminController extends Controller
         // Hapus user dari database
         $user->delete();
         Alert::success('Deleted Successfully', 'Employee Data Deleted Successfully.');
-        return redirect()->route('adminController.index');
+        return redirect()->route('superAdminController.index');
         // return redirect()->route('adminController.index')->with('success', 'User deleted successfully.');
     }
 
