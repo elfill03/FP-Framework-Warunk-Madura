@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use App\Models\BarangMasuk;
 use App\Models\SatuanBarang;
 use Illuminate\Http\Request;
@@ -27,11 +28,10 @@ class BarangMasukController extends Controller
      */
     public function create()
     {
-        $pageTitle = 'Create Barang';
 
         $satuanList = SatuanBarang::all();
 
-        return view('admin.add-barang-masuk', compact('pageTitle', 'satuanList'));
+        return view('admin.add-barang-masuk', compact('satuanList'));
     }
 
     /**
@@ -47,6 +47,9 @@ class BarangMasukController extends Controller
             'satuan_id' => 'required|exists:satuan_barang,id',
         ]);
 
+        // Perhitungan harga per unit
+        $unitPrice = $request->harga_barang / $request->jumlah_barang;
+
         $barang = new BarangMasuk();
         $barang->tanggal = $request->tanggal;
         $barang->nama_barang = $request->nama_barang;
@@ -56,6 +59,24 @@ class BarangMasukController extends Controller
         $barang->satuan_id = $request->satuan_id;
 
         $barang->save();
+
+        // Update stock
+        $barangMasuk = Barang::where('nama_barang', $request->nama_barang)->first();
+        if ($barangMasuk) {
+            $barangMasuk->jumlah_barang += $request->jumlah_barang;
+
+            // Jika terdapat perubahan harga
+            $barangMasuk->harga_barang = $unitPrice;
+
+            $barangMasuk->save();
+        } else {
+            $newBarang = new Barang();
+            $newBarang->nama_barang = $request->nama_barang;
+            $newBarang->jumlah_barang = $request->jumlah_barang;
+            $newBarang->harga_barang = $unitPrice;
+            $newBarang->satuan_id = $request->satuan_id;
+            $newBarang->save();
+        }
 
         return redirect()->route('barang.index');
     }
