@@ -6,6 +6,8 @@ use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataKasirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangMasukController;
+use App\Http\Controllers\LaporanKeluarController;
+use App\Http\Controllers\LaporanMasukController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -81,20 +83,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/edit-barang-masuk/{id}', [BarangMasukController::class, 'edit'])->name('barang.edit');
     Route::put('/admin/barang-masuk/{id}', [BarangMasukController::class, 'update'])->name('barang.update');
 
+    Route::get('/admin/laporan-pemasukan', [LaporanMasukController::class, 'index'])->name('barang.index');
+    Route::get('/admin/laporan-pengeluaran', [LaporanKeluarController::class, 'index'])->name('barangKeluar.index');
 
-    Route::get('/admin/laporan-pemasukan', function () {
-        if (Auth::user()->role != 'admin') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('admin.laporan-pemasukan');
-    })->name('laporanpemasukan');
-
-    Route::get('/admin/laporan-pengeluaran', function () {
-        if (Auth::user()->role != 'admin') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('admin.laporan-pengeluaran');
-    })->name('laporanpengeluaran');
+    Route::get('exportPdf', [LaporanMasukController::class, 'exportPdf'])->name('barang.exportPdf');
+    Route::get('exportPdf', [LaporanKeluarController::class, 'exportPdf'])->name('barangKeluar.exportPdf');
 
     Route::get('/admin/data-kasir', function () {
         if (Auth::user()->role != 'admin') {

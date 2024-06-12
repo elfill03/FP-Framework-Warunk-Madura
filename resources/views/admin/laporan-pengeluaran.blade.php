@@ -32,369 +32,44 @@
     <hr />
     <div class="card">
       <div class="card-body">
+        <div class="col-lg-3 col-xl-6 d-flex mt-auto">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#" class="btn btn-outline-success btn-sm"> <i class="bi bi-download me-1"></i> to Excel
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ route('barangKeluar.exportPdf') }}" class="btn btn-outline-danger btn-sm">
+                        <i class="bi bi-download me-1"></i> to PDF
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div class="table-responsive">
           <table id="example2" class="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th>Tanggal</th>
-                <th>Nama Barang</th>
-                <th>Jenis Barang</th>
-                <th>Jumlah Barang</th>
-                <th>Harga Barang</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Teh Pucuk</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Le Minerale</td>
-                <td>Minuman</td>
-                <td>24</td>
-                <td>Rp. 3.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Minyal Bimoli</td>
-                <td>Bahan Masak</td>
-                <td>20</td>
-                <td>Rp. 15.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Pepsodent</td>
-                <td>Alat Mandi</td>
-                <td>10</td>
-                <td>Rp. 10.000</td>
-              </tr>
-              <tr>
-                <td>27-05-2024</td>
-                <td>Beras</td>
-                <td>Sembako</td>
-                <td>30</td>
-                <td>Rp. 12.000</td>
-              </tr>
-            </tbody>
+            <table id="example2" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Nama Barang</th>
+                        <th>Jumlah Barang</th>
+                        <th>Harga Barang</th>
+                        <th>Total Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($barangKeluars as $barangKeluar)
+                        <tr>
+                            <td>{{ $barangKeluar->tanggal }}</td>
+                            <td>{{ $barangKeluar->barang->nama_barang }}</td>
+                            <td>{{ $barangKeluar->jumlah_barang }}</td>
+                            <td>Rp. {{ number_format($barangKeluar->harga_barang / $barangKeluar->jumlah_barang, 0, ',', '.') }}
+                            </td>
+                            <td>Rp. {{ number_format($barangKeluar->harga_barang, 0, ',', '.') }}</td>
+                        </tr>
+                    @endforeach
+
+                </tbody>
           </table>
         </div>
       </div>
@@ -415,7 +90,7 @@
       $(document).ready(function () {
         var table = $("#example2").DataTable({
           lengthChange: false,
-          buttons: ["copy", "excel", "pdf", "print"],
+        //   buttons: ["copy", "excel", "pdf", "print"],
         });
 
         table

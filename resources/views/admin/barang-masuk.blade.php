@@ -32,7 +32,7 @@
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <table id="example" class="table table-striped table-bordered datatable" style="width:100%">
                     <thead>
                         <tr>
                             <th>Tanggal</th>
@@ -59,7 +59,7 @@
                                 <form action="{{ route('barang.destroy', $barang->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">
+                                    <button type="submit" class="btn btn-danger btn-delete" data-name="{{ $barang->nama_barang }}">
                                         <i class="bx bx-trash text-white"></i>
                                     </button>
                                 </form>
@@ -79,6 +79,28 @@
     <script>
         $(document).ready(function() {
             $('#example').DataTable();
+
+            $(".datatable").on("click", ".btn-delete", function (e) {
+                e.preventDefault();
+
+                var form = $(this).closest("form");
+                var name = $(this).data("name");
+
+                Swal.fire({
+                    title: "Are you sure want to delete\n" + name + "?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "bg-primary",
+                    confirmButtonText: "Yes, delete it!",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
         });
     </script>
+
+
 @endpush
