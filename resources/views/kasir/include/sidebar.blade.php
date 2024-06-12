@@ -25,6 +25,12 @@
       </li>
       <li class="menu-label">Data Barang</li>
       <li>
+        <a href="/kasir/stock-barang">
+          <div class="parent-icon"><i class="bx bx-cube"></i></div>
+          <div class="menu-title">Stock Barang</div>
+        </a>
+      </li>
+      <li>
         <a href="/kasir/barang-keluar">
           <div class="parent-icon"><i class="bx bx-cube"></i></div>
           <div class="menu-title">Barang Keluar</div>

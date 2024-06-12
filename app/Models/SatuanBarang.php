@@ -15,4 +15,14 @@ class SatuanBarang extends Model
     {
         return $this->hasMany(BarangMasuk::class, 'satuan_id');
     }
+
+    public function stockBarang()
+    {
+        return $this->hasMany(Barang::class, 'satuan_id');
+    }
+
+    public function barangKeluars()
+    {
+        return $this->hasMany(BarangKeluar::class);
+    }
 }

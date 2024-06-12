@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
             [
                 'nama' => 'super',
                 'email' => 'super@super',
-                'password' => bcrypt('superadmin'),
+                'password' => bcrypt('supersuper'),
                 'tanggal_Lahir' => '1945-08-17',
                 'jenis_kelamin' => 'L',
                 'alamat' => 'Surabaya, Indonesia',

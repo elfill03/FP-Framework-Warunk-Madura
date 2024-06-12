@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataKasirController;
 use Illuminate\Support\Facades\Route;
@@ -72,7 +74,6 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.admin-dashboard');
     })->name('admindashboard');
 
-    Route::resource('/admin/barang-masuk', BarangMasukController::class);
     Route::get('/admin/barang-masuk', [BarangMasukController::class, 'index'])->name('barang.index');
     Route::get('/admin/add-barang-masuk', [BarangMasukController::class, 'create'])->name('barang.create');
     Route::post('/admin/store-barang-masuk', [BarangMasukController::class, 'store'])->name('barang.store');
@@ -109,13 +110,6 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.add-kasir');
     })->name('addKasir');
 
-
-    Route::get('/admin/edit-barang-masuk', function () {
-        if (Auth::user()->role != 'admin') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('admin.edit-barang-masuk');
-    })->name('updatebarangmasuk');
 });
 
 // KASIR
@@ -127,12 +121,13 @@ Route::middleware(['auth'])->group(function () {
         return view('kasir.kasir-dashboard');
     })->name('kasirdashboard');
 
-    Route::get('/kasir/barang-keluar', function () {
-        if (Auth::user()->role != 'kasir') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('kasir.barang-keluar');
-    })->name('barangkeluar');
+    Route::get('/kasir/stock-barang', [BarangController::class, 'index'])->name('stockbarang.index');
+    Route::get('/getSatuan/{id}', [BarangController::class, 'getSatuanById']);
+
+    Route::get('/kasir/barang-keluar', [BarangKeluarController::class, 'index'])->name('barangKeluar.index');
+    Route::get('/kasir/add-barang-keluar', [BarangKeluarController::class, 'create'])->name('barangKeluar.create');
+    Route::post('/kasir/store-barang-keluar', [BarangKeluarController::class, 'store'])->name('barangKeluar.store');
+
 
     Route::get('/kasir/laporan-pengeluaran', function () {
         if (Auth::user()->role != 'kasir') {
@@ -141,20 +136,6 @@ Route::middleware(['auth'])->group(function () {
         return view('kasir.laporan-pengeluaran');
     })->name('laporanpengeluarankasir');
 
-
-    Route::get('/kasir/add-barang-keluar', function () {
-        if (Auth::user()->role != 'kasir') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('kasir.add-barang-keluar');
-    })->name('addbarangkeluar');
-
-    Route::get('/kasir/edit-barang-keluar', function () {
-        if (Auth::user()->role != 'kasir') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('kasir.edit-barang-keluar');
-    })->name('updatebarangkeluar');
 });
 
 // AUTHENTICATION

@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('barang_keluar', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_barang', 50);
+            $table->foreignId('barang_id')->nullable()->constrained('barang');
             $table->date('tanggal');
             $table->integer('jumlah_barang');
             $table->integer('harga_barang');
+            $table->integer('total_harga');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('satuan_id')->constrained('satuan_barang');
+            $table->foreignId('satuan_id')->nullable()->constrained('satuan_barang');
             $table->timestamps();
         });
+
     }
 
     /**

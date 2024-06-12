@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SatuanSeeder::class,
             BarangmasukSeeder::class,
+            StockBarangSeeder::class,
         ]);
     }
 }

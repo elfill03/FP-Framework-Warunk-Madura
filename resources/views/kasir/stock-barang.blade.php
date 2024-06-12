@@ -25,8 +25,7 @@
     </div>
     <!--end breadcrumb-->
     <div class="d-flex">
-        <h6 class="mb-0 text-uppercase">Data Barang Keluar</h6>
-        <a href="{{ route('barangKeluar.create') }}" class="btn btn-primary ms-auto">Catat Barang Keluar</a>
+        <h6 class="mb-0 text-uppercase">Stock Barang</h6>
     </div>
     <hr/>
     <div class="card">
@@ -35,25 +34,22 @@
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Tanggal</th>
                             <th>Nama Barang</th>
-                            <th>Jumlah Barang</th>
-                            <th>Nama Kasir</th>
-                            <th>Harga per Satuan</th>
-                            <th>Total Harga</th>
+                            <th>Stok Barang</th>
+                            <th>Harga Barang per Satuan</th>
+                            <th>Satuan Barang</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($barangKeluars as $barangKeluar)
-                            <tr>
-                                <td>{{ $barangKeluar->tanggal }}</td>
-                                <td>{{ $barangKeluar->barang->nama_barang }}</td>
-                                <td>{{ $barangKeluar->jumlah_barang }}</td>
-                                <td>{{ $barangKeluar->user->nama }}</td>
-                                <td>Rp. {{ number_format($barangKeluar->harga_barang, 0, ',', '.') }}</td>
-                                <td>Rp. {{ number_format($barangKeluar->harga_barang * $barangKeluar->jumlah_barang, 0, ',', '.') }}</td>
-                            </tr>
-                        @endforeach
+                        @foreach($stockbarangs as $stockbarang)
+                        <tr>
+                            <td>{{ $stockbarang->nama_barang }}</td>
+                            <td>{{ $stockbarang->jumlah_barang }}</td>
+                            <td>Rp. {{ number_format($stockbarang->harga_barang, 0, ',', '.') }}</td>
+                            <td>{{ $stockbarang->satuan->kode_satuan }}</td>
+                        </tr>
+                    @endforeach
+
                     </tbody>
                 </table>
             </div>
