@@ -23,20 +23,20 @@
             <div class="card-body">
                 <form action="{{ route('adminController.update', ['adminController' => $user->id]) }}" method="POST">
                     @csrf
-                    @method('put')
-                    <div class=" mb-3">
-                        <label for="firstName" class="form-label">Nama Admin</label>
+                    @method('PUT')
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama Admin</label>
                         <input class="form-control @error('nama') is-invalid @enderror" type="text" name="nama"
-                            id="nama" value="{{ $user->nama }}" require placeholder="Nama Admin">
+                            id="nama" value="{{ $user->nama }}" required placeholder="Nama Admin">
                         @error('nama')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
-                    <div class=" mb-3">
+                    <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input class="form-control @error('email') is-invalid @enderror" type="text" name="email"
+                        <input class="form-control @error('email') is-invalid @enderror" type="email" name="email"
                             id="email" value="{{ $user->email }}" required placeholder="Email Admin">
                         @error('email')
                             <div class="invalid-feedback">
@@ -44,24 +44,36 @@
                             </div>
                         @enderror
                     </div>
-                    <div class="row gy-5">
-                        <div class="col-md-6 mb-3">
-                            <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
-                            <input type="date" class="form-control" id="tanggal_Lahir" name="tanggal_Lahir"
-                                value="{{ $user->tanggal_Lahir }}" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="jenis_kelamin" class="form-label">Jenis Kelamin:</label>
-                            <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
-                                <option value="L">Laki-laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
-                        </div>
+                    <div class="mb-3">
+                        <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                        <input class="form-control @error('tanggal_lahir') is-invalid @enderror" type="date"
+                            name="tanggal_lahir" id="tanggal_lahir" value="{{ $user->tanggal_lahir }}" required
+                            placeholder="Tanggal Lahir">
+                        @error('tanggal_lahir')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
-                    <div class="col-md mb-3">
-                        <label for="no_telp" class="form-label">no_telp</label>
+                    <div class="mb-3">
+                        <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                        <select class="form-control @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin"
+                            id="jenis_kelamin" required>
+                            <option value="L" {{ $user->jenis_kelamin == 'L' ? 'selected' : '' }}>Laki-laki
+                            </option>
+                            <option value="P" {{ $user->jenis_kelamin == 'P' ? 'selected' : '' }}>Perempuan
+                            </option>
+                        </select>
+                        @error('jenis_kelamin')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="no_telp" class="form-label">No. Telp</label>
                         <input class="form-control @error('no_telp') is-invalid @enderror" type="text" name="no_telp"
-                            id="no_telp"value="{{ $user->no_telp }}" required placeholder="no_telp ">
+                            id="no_telp" value="{{ $user->no_telp }}" required placeholder="No. Telp">
                         @error('no_telp')
                             <div class="invalid-feedback">
                                 {{ $message }}
