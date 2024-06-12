@@ -102,7 +102,8 @@ class DataAdminController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required',
             'email' => 'required|email',
-            'alamat' => 'required',
+            'tanggal_lahir' => 'required|date',
+            'jenis_kelamin' => 'required',
             'no_telp' => 'required',
         ], $messages);
 
@@ -115,13 +116,11 @@ class DataAdminController extends Controller
             return redirect()->back()->with('error', 'User not found');
         }
 
-
         $user->nama = $request->input('nama');
         $user->email = $request->input('email');
-        $user->no_telp = $request->input('no_telp');
-        $user->tanggal_Lahir = $request->input('tanggal_Lahir');
+        $user->tanggal_lahir = $request->input('tanggal_lahir');
         $user->jenis_kelamin = $request->input('jenis_kelamin');
-        $user->foto_profile = ""; // Tetap menggunakan nilai yang ada jika tidak diubah
+        $user->no_telp = $request->input('no_telp');
         $user->save();
 
         return redirect()->route('adminController.index')->with('success', 'Data Admin updated successfully');
