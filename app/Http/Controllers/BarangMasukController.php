@@ -7,6 +7,7 @@ use App\Models\BarangMasuk;
 use App\Models\SatuanBarang;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BarangMasukController extends Controller
 {
@@ -17,9 +18,12 @@ class BarangMasukController extends Controller
     {
         $barangs = BarangMasuk::with(['user', 'satuan'])->get();
 
+        confirmDelete();
+
         if (Auth::user()->role != 'admin') {
             abort(403, 'Unauthorized action.');
         }
+
         return view('admin.barang-masuk', [ 'barangs' => $barangs]);
     }
 
@@ -78,6 +82,8 @@ class BarangMasukController extends Controller
             $newBarang->save();
         }
 
+        Alert::success('Berhasil Menambahkan Barang');
+
         return redirect()->route('barang.index');
     }
 
@@ -86,12 +92,7 @@ class BarangMasukController extends Controller
      */
     public function show(string $id)
     {
-
-        $pageTitle = 'Detail Barang';
-
-        $barang = BarangMasuk::find($id);
-
-        return view('barang.show', compact('pageTitle', 'barang'));
+        //
     }
 
     /**
@@ -126,7 +127,9 @@ class BarangMasukController extends Controller
 
         $barang->save();
 
-        return redirect()->route('barang.index')->with('success', 'Barang updated successfully.');
+        Alert::success('Berhasil Mengubah Barang');
+
+        return redirect()->route('barang.index');
     }
 
     /**
@@ -138,6 +141,8 @@ class BarangMasukController extends Controller
 
         $barang->delete();
 
-        return redirect()->route('barang.index')->with('success', 'Barang deleted successfully.');
+        Alert::success('Berhasil Menghapus Barang');
+
+        return redirect()->route('barang.index');
     }
 }
