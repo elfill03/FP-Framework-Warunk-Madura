@@ -40,7 +40,7 @@
             </a>
         </li>
         <li>
-            <a href="/admin/data-kasir">
+            <a href="{{ route('kasirController.index') }}">
                 <div class="parent-icon"><i class="bx bx-detail"></i></div>
                 <div class="menu-title">Data Pegawai</div>
             </a>
