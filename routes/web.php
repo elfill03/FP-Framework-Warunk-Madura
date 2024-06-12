@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Controllers\BarangController;
-use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataKasirController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BarangMasukController;
+use App\Http\Controllers\BarangController;
+
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -74,13 +73,12 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.admin-dashboard');
     })->name('admindashboard');
 
-    Route::get('/admin/barang-masuk', [BarangMasukController::class, 'index'])->name('barang.index');
-    Route::get('/admin/add-barang-masuk', [BarangMasukController::class, 'create'])->name('barang.create');
-    Route::post('/admin/store-barang-masuk', [BarangMasukController::class, 'store'])->name('barang.store');
-    Route::delete('/admin/barang-masuk/{id}', [BarangMasukController::class, 'destroy'])->name('barang.destroy');
-    Route::get('/admin/edit-barang-masuk/{id}', [BarangMasukController::class, 'edit'])->name('barang.edit');
-    Route::put('/admin/barang-masuk/{id}', [BarangMasukController::class, 'update'])->name('barang.update');
-
+    Route::get('/admin/barang-masuk', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.barang-masuk');
+    })->name('barangmasuk');
 
     Route::get('/admin/laporan-pemasukan', function () {
         if (Auth::user()->role != 'admin') {
@@ -110,6 +108,19 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.add-kasir');
     })->name('addKasir');
 
+    Route::get('/admin/add-barang-masuk', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.add-barang-masuk');
+    })->name('addbarangmasuk');
+
+    Route::get('/admin/edit-barang-masuk', function () {
+        if (Auth::user()->role != 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('admin.edit-barang-masuk');
+    })->name('updatebarangmasuk');
 });
 
 // KASIR
@@ -121,13 +132,12 @@ Route::middleware(['auth'])->group(function () {
         return view('kasir.kasir-dashboard');
     })->name('kasirdashboard');
 
-    Route::get('/kasir/stock-barang', [BarangController::class, 'index'])->name('stockbarang.index');
-    Route::get('/getSatuan/{id}', [BarangController::class, 'getSatuanById']);
-
-    Route::get('/kasir/barang-keluar', [BarangKeluarController::class, 'index'])->name('barangKeluar.index');
-    Route::get('/kasir/add-barang-keluar', [BarangKeluarController::class, 'create'])->name('barangKeluar.create');
-    Route::post('/kasir/store-barang-keluar', [BarangKeluarController::class, 'store'])->name('barangKeluar.store');
-
+    Route::get('/kasir/barang-keluar', function () {
+        if (Auth::user()->role != 'kasir') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('kasir.barang-keluar');
+    })->name('barangkeluar');
 
     Route::get('/kasir/laporan-pengeluaran', function () {
         if (Auth::user()->role != 'kasir') {
@@ -136,6 +146,20 @@ Route::middleware(['auth'])->group(function () {
         return view('kasir.laporan-pengeluaran');
     })->name('laporanpengeluarankasir');
 
+
+    Route::get('/kasir/add-barang-keluar', function () {
+        if (Auth::user()->role != 'kasir') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('kasir.add-barang-keluar');
+    })->name('addbarangkeluar');
+
+    Route::get('/kasir/edit-barang-keluar', function () {
+        if (Auth::user()->role != 'kasir') {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('kasir.edit-barang-keluar');
+    })->name('updatebarangkeluar');
 });
 
 // AUTHENTICATION
@@ -158,7 +182,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Data Admin Controller
 Route::resource('adminController', DataAdminController::class);
 Route::get('/dataAdmin/getAdmin', [DataAdminController::class, 'getAdmin'])->name('dataAdmin.getAdmin');
+Route::get('/admin/{id}/edit', [DataAdminController::class, 'edit'])->name('dataAdmin.edit');
+
 
 // Data Kasir Controller
-Route::resource('kasirController', DataKasirController::class);
+Route::resource('kasirController', DataKasirController::class, );
 Route::get('/dataKasir/getKasir', [DataKasirController::class, 'getKasir'])->name('dataKasir.getKasir');
