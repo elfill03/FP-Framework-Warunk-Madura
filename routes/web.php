@@ -87,8 +87,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/laporan-pemasukan', [LaporanMasukController::class, 'index'])->name('barang.index');
     Route::get('/admin/laporan-pengeluaran', [LaporanKeluarController::class, 'index'])->name('barangKeluar.index');
 
-    Route::get('exportPdf', [LaporanMasukController::class, 'exportPdf'])->name('barang.exportPdf');
-    Route::get('exportPdf', [LaporanKeluarController::class, 'exportPdf'])->name('barangKeluar.exportPdf');
+    Route::get('exportPdfMasuk', [LaporanMasukController::class, 'exportPdf'])->name('barang.exportPdfMasuk');
+    Route::get('exportPdfKeluar', [LaporanKeluarController::class, 'exportPdf'])->name('barangKeluar.exportPdfKeluar');
 
     Route::get('/admin/data-kasir', function () {
         if (Auth::user()->role != 'admin') {
@@ -104,19 +104,6 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.add-kasir');
     })->name('addKasir');
 
-    Route::get('/admin/add-barang-masuk', function () {
-        if (Auth::user()->role != 'admin') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('admin.add-barang-masuk');
-    })->name('addbarangmasuk');
-
-    Route::get('/admin/edit-barang-masuk', function () {
-        if (Auth::user()->role != 'admin') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('admin.edit-barang-masuk');
-    })->name('updatebarangmasuk');
 });
 
 // KASIR

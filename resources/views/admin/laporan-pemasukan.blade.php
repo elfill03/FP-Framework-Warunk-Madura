@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="{{ route('barang.exportPdf') }}" class="btn btn-outline-danger btn-sm">
+                            <a href="{{ route('barang.exportPdfMasuk') }}" class="btn btn-outline-danger btn-sm">
                                 <i class="bi bi-download me-1"></i> to PDF
                             </a>
                         </li>
