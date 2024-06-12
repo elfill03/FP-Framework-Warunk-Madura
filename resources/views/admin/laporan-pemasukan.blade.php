@@ -35,7 +35,8 @@
                 <div class="col-lg-3 col-xl-6 d-flex mt-auto">
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a href="#" class="btn btn-outline-success btn-sm"> <i class="bi bi-download me-1"></i> to Excel
+                            <a href="{{ route('barang.exportExcel') }}" class="btn btn-outline-success btn-sm"> <i
+                                    class="bi bi-download me-1"></i> to Excel
                             </a>
                         </li>
                         <li class="list-inline-item">
