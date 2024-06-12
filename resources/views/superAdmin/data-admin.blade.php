@@ -32,7 +32,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="adminTable" class="table table-striped table-bordered" style="width:100%">
+                    <table id="adminTable" class="table table-striped table-bordered datatable" style="width:100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -41,7 +41,6 @@
                                 <th>Email</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
-                                <th>Alamat</th>
                                 <th>No. Telp</th>
                                 <th>Actions</th>
                             </tr>
@@ -88,10 +87,7 @@
                             data: "jenis_kelamin",
                             name: "jenis_kelamin"
                         },
-                        {
-                            data: "alamat",
-                            name: "alamat"
-                        },
+
                         {
                             data: "no_telp",
                             name: "no_telp"
@@ -100,7 +96,7 @@
                             data: "actions",
                             name: "actions",
                             orderable: false,
-                            searchable: false
+                            searchable: false,
                         }
                     ],
                     order: [
@@ -111,6 +107,27 @@
                         [10, 25, 50, 100, "All"],
                     ],
                 });
+
+
+                $(".datatable").on("click", ".btn-delete", function(e) {
+                    e.preventDefault();
+                    var form = $(this).closest("form");
+                    var name = $(this).data("name");
+                    Swal.fire({
+                        title: "Are you sure want to delete\n" + name + "?",
+                        text: "You won't be able to revert this!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonClass: "bg-primary",
+                        confirmButtonText: "Yes, delete it!",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+
+
             });
         </script>
         <script src="{{ asset('plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
