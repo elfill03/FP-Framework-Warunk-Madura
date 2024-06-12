@@ -32,7 +32,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="kasirTable" class="table table-striped table-bordered" style="width:100%">
+                    <table id="kasirTable" class="table table-striped table-bordered datatable" style="width:100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -111,6 +111,25 @@
                         [10, 25, 50, 100, "All"],
                     ],
                 });
+
+                $(".datatable").on("click", ".btn-delete", function(e) {
+                    e.preventDefault();
+                    var form = $(this).closest("form");
+                    var name = $(this).data("name");
+                    Swal.fire({
+                        title: "Are you sure want to delete\n" + name + "?",
+                        text: "You won't be able to revert this!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonClass: "bg-primary",
+                        confirmButtonText: "Yes, delete it!",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+
             });
         </script>
         <script src="{{ asset('plugins/datatable/js/jquery.dataTables.min.js') }}"></script>

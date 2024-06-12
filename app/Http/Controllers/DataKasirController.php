@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DataKasirController extends Controller
 {
@@ -16,6 +18,8 @@ class DataKasirController extends Controller
     public function index()
     {
         //
+        confirmDelete();
+        return view("admin.data-kasir");
     }
 
     /**
@@ -75,6 +79,8 @@ class DataKasirController extends Controller
     public function edit(string $id)
     {
         //
+        $user = User::findOrFail($id);
+        return view('admin.edit-kasir', compact('user'));
     }
 
     /**
@@ -82,7 +88,38 @@ class DataKasirController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $messages = [
+            'required' => ':Attribute harus diisi.',
+            'email' => 'Isi :attribute dengan format yang benar',
+            'numeric' => 'Isi :attribute dengan angka'
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'email' => 'required|email',
+            'tanggal_lahir' => 'required|date',
+            'jenis_kelamin' => 'required',
+            'no_telp' => 'required',
+        ], $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $user = User::find($id);
+        if (!$user) {
+            return redirect()->back()->with('error', 'User not found');
+        }
+
+        $user->nama = $request->input('nama');
+        $user->email = $request->input('email');
+        $user->tanggal_lahir = $request->input('tanggal_lahir');
+        $user->jenis_kelamin = $request->input('jenis_kelamin');
+        $user->alamat = $request->input('alamat');
+        $user->no_telp = $request->input('no_telp');
+        $user->save();
+
+        return redirect()->route('kasirController.index')->with('success', 'Data Admin updated successfully');
     }
 
     /**
@@ -90,7 +127,21 @@ class DataKasirController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::find($id);
+        // Periksa apakah user ada sebelum mencoba menghapus
+        if (!$user) {
+            return redirect()->route('kasirController.index')->with('error', 'User not found.');
+        }
+        // Hapus file yang terkait jika ada
+        if ($user->encrypted_filename) {
+            $deletionpath = 'public/files/' . $user->encrypted_filename;
+            Storage::delete($deletionpath);
+        }
+        // Hapus user dari database
+        $user->delete();
+        Alert::success('Deleted Successfully', 'Employee Data Deleted Successfully.');
+        return redirect()->route('kasirController.index');
+        // return redirect()->route('adminController.index')->with('success', 'User deleted successfully.');
     }
     public function getKasir(Request $request)
     {
@@ -98,10 +149,12 @@ class DataKasirController extends Controller
             $data = User::where('role', 'kasir')->get();
             return DataTables::of($data)
                 ->addIndexColumn()
-                ->addColumn('actions', function ($data) {
-                    return view("superAdmin.layout.actions");
+                ->addColumn('actions', function ($row) {
+                    return view("admin.layout.actions", ['id' => $row->id, 'name' => $row->nama])->render();
                 })
+                ->rawColumns(['actions'])
                 ->make(true);
         }
+
     }
 }

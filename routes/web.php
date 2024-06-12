@@ -188,3 +188,4 @@ Route::get('/admin/{id}/edit', [DataAdminController::class, 'edit'])->name('data
 // Data Kasir Controller
 Route::resource('kasirController', DataKasirController::class, );
 Route::get('/dataKasir/getKasir', [DataKasirController::class, 'getKasir'])->name('dataKasir.getKasir');
+Route::get('/admin/{id}/edit', [DataKasirController::class, 'edit'])->name('dataKasir.edit');
