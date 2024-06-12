@@ -86,6 +86,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/laporan-pemasukan', [LaporanMasukController::class, 'index'])->name('barang.index');
     Route::get('/admin/laporan-pengeluaran', [LaporanKeluarController::class, 'index'])->name('barangKeluar.index');
+    Route::get('exportExcel', [LaporanMasukController::class, 'exportExcel'])->name('barang.exportExcel');
+    Route::get('exportExcel', [LaporanKeluarController::class, 'exportExcel'])->name('barangKeluar.exportExcel');
 
     Route::get('exportPdfMasuk', [LaporanMasukController::class, 'exportPdf'])->name('barang.exportPdfMasuk');
     Route::get('exportPdfKeluar', [LaporanKeluarController::class, 'exportPdf'])->name('barangKeluar.exportPdfKeluar');
