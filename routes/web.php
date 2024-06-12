@@ -5,9 +5,10 @@ use App\Http\Controllers\DataKasirController;
 use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
-
+use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\LaporanKeluarController;
+use App\Http\Controllers\LaporanKeluarKasirController;
 use App\Http\Controllers\LaporanMasukController;
 use Illuminate\Support\Facades\Auth;
 
@@ -115,13 +116,6 @@ Route::middleware(['auth'])->group(function () {
         return view('kasir.kasir-dashboard');
     })->name('kasirdashboard');
 
-    Route::get('/kasir/barang-keluar', function () {
-        if (Auth::user()->role != 'kasir') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('kasir.barang-keluar');
-    })->name('barangkeluar');
-
     Route::get('/kasir/laporan-pengeluaran', function () {
         if (Auth::user()->role != 'kasir') {
             abort(403, 'Unauthorized action.');
@@ -129,13 +123,14 @@ Route::middleware(['auth'])->group(function () {
         return view('kasir.laporan-pengeluaran');
     })->name('laporanpengeluarankasir');
 
+    Route::get('/kasir/stock-barang', [BarangController::class, 'index'])->name('stockbarang.index');
+    Route::get('/kasir/barang-keluar', [BarangKeluarController::class, 'index'])->name('barangKeluar.index');
+    Route::get('/kasir/add-barang-keluar', [BarangKeluarController::class, 'create'])->name('barangKeluar.create');
+    Route::post('/kasir/store-barang-keluar', [BarangKeluarController::class, 'store'])->name('barangKeluar.store');
 
-    Route::get('/kasir/add-barang-keluar', function () {
-        if (Auth::user()->role != 'kasir') {
-            abort(403, 'Unauthorized action.');
-        }
-        return view('kasir.add-barang-keluar');
-    })->name('addbarangkeluar');
+    Route::get('/kasir/laporan-pengeluaran', [LaporanKeluarKasirController::class, 'index'])->name('barangKeluar.index');
+
+    Route::get('exportPdfKeluar', [LaporanKeluarKasirController::class, 'exportPdf'])->name('barangKeluar.exportPdfKeluarKasir');
 
     Route::get('/kasir/edit-barang-keluar', function () {
         if (Auth::user()->role != 'kasir') {
