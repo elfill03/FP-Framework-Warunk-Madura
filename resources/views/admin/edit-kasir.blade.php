@@ -21,7 +21,8 @@
 
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('kasirController.update', ['kasirController' => $user->id]) }}" method="POST">
+                <form action="{{ route('kasirController.update', ['kasirController' => $user->id]) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
@@ -87,6 +88,16 @@
                         <input class="form-control @error('no_telp') is-invalid @enderror" type="text" name="no_telp"
                             id="no_telp" value="{{ $user->no_telp }}" required placeholder="No. Telp">
                         @error('no_telp')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="foto_profile" class="form-label">Foto Profile</label>
+                        <input class="form-control @error('foto_profile') is-invalid @enderror" type="file"
+                            name="foto_profile" id="foto_profile">
+                        @error('foto_profile')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
