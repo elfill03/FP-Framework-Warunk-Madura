@@ -51,17 +51,23 @@ class DataAdminController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
         // create User
-        $user = User::create([
-            'nama' => $request->input('nama'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
-            'tanggal_Lahir' => $request->input("tanggal_Lahir"),
-            'jenis_kelamin' => $request->input("jenis_kelamin"),
-            'alamat' => $request->input('alamat'),
-            'no_telp' => $request->input('no_telp'),
-            'foto_profile' => (""),
-            'role' => ("admin"),
-        ]);
+        $user = new User();
+        $user->nama = $request->input('nama');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+        $user->tanggal_Lahir = $request->input('tanggal_Lahir');
+        $user->jenis_kelamin = $request->input('jenis_kelamin');
+        $user->alamat = $request->input('alamat');
+        $user->no_telp = $request->input('no_telp');
+        $user->role = "admin";
+
+        if ($request->hasFile('foto_profile')) {
+            $imageName = time() . '.' . $request->foto_profile->extension();
+            $request->foto_profile->storeAs('profile_images', $imageName, 'public');
+            $user->foto_profile = $imageName;
+        } else {
+            $user->foto_profile = null; // Atau sesuaikan dengan nilai default yang diizinkan
+        }
         $user->save();
         return redirect()->route('superAdminController.index');
         // return redirect()->route('users.index')->with('success', 'User created successfully.');
@@ -121,6 +127,17 @@ class DataAdminController extends Controller
         $user->tanggal_lahir = $request->input('tanggal_lahir');
         $user->jenis_kelamin = $request->input('jenis_kelamin');
         $user->no_telp = $request->input('no_telp');
+        if ($request->hasFile('foto_profile')) {
+            // Hapus foto lama jika ada
+            if ($user->foto_profile) {
+                Storage::disk('public')->delete('profile_images/' . $user->foto_profile);
+            }
+
+            // Upload foto profile yang baru
+            $imageName = time() . '.' . $request->foto_profile->getClientOriginalExtension();
+            $request->foto_profile->storeAs('profile_images', $imageName, 'public');
+            $user->foto_profile = $imageName;
+        }
         $user->save();
 
         return redirect()->route('superAdminController.index')->with('success', 'Data Admin updated successfully');
@@ -139,6 +156,9 @@ class DataAdminController extends Controller
             Storage::delete($deletionpath);
         }
         // Hapus user dari database
+        if ($user->foto_profile) {
+            Storage::disk('public')->delete('profile_images/' . $user->foto_profile);
+        }
         $user->delete();
         Alert::success('Deleted Successfully', 'Employee Data Deleted Successfully.');
         return redirect()->route('superAdminController.index');

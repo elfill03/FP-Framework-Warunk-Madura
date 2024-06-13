@@ -25,7 +25,7 @@
                 <h6 class="mb-0 text-uppercase">Tambah Data Kasir</h6>
                 <hr />
                 <div class="card">
-                    <form action="{{ route('kasirController.store') }}" method="POST">
+                    <form action="{{ route('kasirController.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class=" mb-3">
@@ -97,18 +97,10 @@
                                     </select>
                                 </div>
                             </div>
-                            {{-- <label for="basic-url" class="form-label">Nama Admin</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                            </div> --}}
-                            {{-- <label for="basic-url" class="form-label">Email Admin</label>
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                            <div class="form-group">
+                                <label for="foto_profile">Foto Profile</label>
+                                <input type="file" name="foto_profile" class="form-control">
                             </div>
-                            <label for="basic-url" class="form-label">Alamat Admin</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                            </div> --}}
                             <div class="d-flex justify-content-center mt-4">
                                 <button type="submit" class="btn btn-primary">Tambah Admin</button>
                             </div>
